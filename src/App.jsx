@@ -6,7 +6,7 @@ function App() {
     <>
       <Link to='A'>A</Link>
       <br />
-      <Link to='/B'>B</Link>
+      <Link to='B'>B</Link>
     </>
   )
 }

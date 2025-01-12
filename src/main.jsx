@@ -5,20 +5,23 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import A from './components/A.jsx'
 import B from './components/B.jsx'
 
-const route = createBrowserRouter(
+const routes = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path='' element={<App />} />
+            <Route path='/' element={<App />} />
 
-            <Route path='A' element={<A />} />
-            <Route path='B' element={<B />} />
+            <Route path='/A' element={<A />} />
+            <Route path='/B' element={<B />} />
 
         </>
     )
 )
+const router = createBrowserRouter(routes, {
+    basename: "/temp"
+})
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={route}/>
+    <RouterProvider router={router}/>
   </StrictMode>,
 )
